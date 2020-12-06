@@ -32,11 +32,34 @@ void College::displayCollegeInformation(College1 *collegeToShow)
 	cout << "---" << endl;
 }
 
-void College::addToPersonalCollegeList(College1 *collegeToAddToList)
+void College::addToPersonalCollegeList()
 { // adds college to your own separate linked list of your favorite colleges
+	College1 *collegeToAddToList = selectCollege();
 	College1 *iterator = headPersonalList;
-	while(iterator->next != nullptr){
+	while (iterator->next != nullptr)
+	{
 		iterator = iterator->next;
 	}
-	iterator->next = collegeToAddToList;
+	iterator->next = collegeToAddToList; // add the college to the end of the personal list
+}
+
+College1 *College::selectCollege()
+{
+	cout << "Select the college you want from this list:" << endl;
+	College1 *iterator1 = head;
+	while (iterator1->next != nullptr) // print out the names of all the colleges
+	{
+		cout << iterator1->name << endl;
+		iterator1 = iterator1->next;
+	}
+	cout << "Enter in the name of the college: ";
+	string nameCol;
+	cin >> nameCol;
+	College1 *lastIterator = head;
+	while(lastIterator->next != nullptr){
+		if(lastIterator->name == nameCol){
+			return lastIterator; // finds the college with the right name and returns it
+		}
+	}
+	return lastIterator; // if something goes wrong just return it
 }
