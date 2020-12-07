@@ -19,11 +19,6 @@ void College::displayCollegeInformation(College1 *collegeToShow)
 		cout << collegeToShow->subcolleges[i] << " ";
 	}
 	cout << endl;
-	cout << "Extracurriculars: ";
-	for (int j = 0; j < collegeToShow->extracurriculars.size(); j++)
-	{
-		cout << collegeToShow->extracurriculars[j] << " ";
-	}
 	cout << endl;
 	cout << "Academic Requirements:" << endl;
 	cout << "Average GPA of students accepted: " << collegeToShow->minGPA << endl;
@@ -56,8 +51,10 @@ College1 *College::selectCollege()
 	string nameCol;
 	cin >> nameCol;
 	College1 *lastIterator = head;
-	while(lastIterator->next != nullptr){
-		if(lastIterator->name == nameCol){
+	while (lastIterator->next != nullptr)
+	{
+		if (lastIterator->name == nameCol)
+		{
 			return lastIterator; // finds the college with the right name and returns it
 		}
 	}

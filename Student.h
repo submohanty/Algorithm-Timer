@@ -47,6 +47,8 @@ struct StudentNode
 class Student
 {
 public:
+	void buildBST(string filename);
+	
 private:
 };
 

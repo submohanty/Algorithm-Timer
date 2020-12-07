@@ -1,0 +1,10 @@
+harvard,engineering-arts-law,45500,Cambridge-MA,2,4.1,1550,34
+cuboulder,engineering-aerospace-business,32000,Boulder-CO,103,3.4,1300,26
+princeton,engineering-english-biomedical,56250,Princeton-NJ,1,4.2,1560,35
+uflorida,business-nanotechnology-finance,29870,Gainesville-FL,30,3.6,1370,28
+texasa&m,economics-premed-it,26450,CollegeStation-TX,66,3.5,1320,27
+byu-provo,engineering-biology-socialsciences,65125,Provo-UT,80,3.6,1380,27
+ukansas,business-health-engineering,26785,Lawrence-KS,124,3.0,1180,22
+ualabama,business-journalism-engineering,24475,Tuscaloosa-AL,143,3.0,1200,22
+asu,business-engineering-medical,26785,Tempe-AZ,103,3.3,1350,26
+ucla,engineering-business-biology,32450,LosAngeles-CA,20,3.9,1440,30
