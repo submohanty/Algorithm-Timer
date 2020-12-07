@@ -114,6 +114,16 @@ int main(int argc, const char *argv[])
 			  << std::chrono::duration_cast<std::chrono::nanoseconds>(t8 - t7).count()
 			  << " nanoseconds" << std::endl;
 
+	// Standard Breadth First Traversal
+	string bft;
+	cin >> bft;
+	auto t9 = Clock::now();
+	g1.BFSTraversal(bft);
+	auto t10 = Clock::now();
+	std::cout << "Delta t10-t9: "
+			  << std::chrono::duration_cast<std::chrono::nanoseconds>(t10 - t9).count()
+			  << " nanoseconds" << std::endl;
+
 	// Prim's
 
 	// Topological Sort

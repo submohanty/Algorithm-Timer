@@ -40,9 +40,7 @@ class Graph
 		vertex* minimumDistanceNotVisited(); // done
 		bool visited(); // done
 		void dijkstras(string v1); // done
-		void prim(string name);
-		void topologicalSort();
-		void topologicalSortHelper(int currentIndex, bool visited[], stack<int>& myStack);
+		void BFSTraversal(string v);
         vertex* BFS(std::string v1, std::string v2);
 		// Project functions end
 

@@ -196,20 +196,21 @@ void Graph::dijkstras(string v1){ // done - learned how to with recitation 10
 	}
 }
 
-void Graph::prim(string name){
-
-}
-
-void Graph::topologicalSort(){
-
-}
-// https://www.geeksforgeeks.org/cpp-program-for-topological-sorting/
-void Graph::topologicalSortHelper(int currentIndex, bool visited[], stack<int>& myStack){
-	visited[currentIndex] = true;	
-    list<int>::iterator i; 
-
-
-
+void Graph::BFSTraversal(string v){ // simply works layer by layer - done
+	vertex *iterator = search(v);
+	iterator->visited = true;
+	queue<vertex*> q;
+	q.push(iterator);
+	while(!q.empty()){
+		vertex *dequeued = q.front();
+		q.pop();
+		for(int i = 0; i < dequeued->adj.size(); i++){
+			if(!dequeued->adj[i].v->visited){
+				dequeued->adj[i].v->visited = true;
+			}
+		}
+		
+	}
 }
 
 // Project functions end --------------
