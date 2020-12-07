@@ -9,17 +9,30 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
+	ifstream file;
+	file.open(argv[1]);
+	if(!file){
+		cout << "The file was not able to be opened. Check the file name, and make sure the file is in the same directory as Main.cpp" << endl;
+		return 0;
+	}
 	// build college linked list
+	College collegelist;
+	string lineInCollegeList;
+	string wordInCollegeList;
+	while(getline(file, lineInCollegeList, ',')){
+		stringstream ss(lineInCollegeList);
+		getline(ss,wordInCollegeList);
+	}
 
 	// build student BST
 
 	// menu
-	string dmenu = "======Main Menu======\n"
-				   "1. Print vertices\n"
-				   "2. Assign Groups\n"
-				   "3. Infect and Trace\n"
-				   "4. Infect and Spread\n"
-				   "5. Quit\n";
+	string menu = "======Main Menu======\n"
+				   "1. \n"
+				   "2. \n"
+				   "3. \n"
+				   "4. \n"
+				   "5. \n";
 
 	if (argc < 2)
 	{
@@ -32,7 +45,7 @@ int main(int argc, char *argv[])
 	std::string filename(argv[1]);
 	do
 	{
-		cout << dmenu;
+		cout << menu;
 		cin >> choice;
 
 		// flush the newlines and other characters

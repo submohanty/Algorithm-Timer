@@ -27,7 +27,7 @@ struct College1
 class College
 {
 public:
-	College1 *getHighestRank(string subcollege, double maxCost, string topExtracurricular, int GPA, int testScore); // returns the highest ranking college within your stats and requirements
+	void buildLL(); // builds the college list
 	void displayCollegeInformation(College1 *collegeToShow);														// cout information about the college chosen
 	void addToPersonalCollegeList();																				// adds college to your own separate linked list of your favorite colleges
 	void personalCollegeListTXT();																					// outputs a txt file with your personal list
