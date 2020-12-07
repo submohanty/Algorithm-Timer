@@ -9,18 +9,21 @@ using namespace std;
 
 struct vertex;
 
-struct adjVertex{
-    vertex *v;
-    int weight; // just leave this as 1 for the purposes of this assignment
+struct adjVertex
+{
+	vertex *v;
+	int weight; // just leave this as 1 for the purposes of this assignment
 };
 
-struct StudentNode{
-    vertex *parent;
-    string name;
-    int grade;
+struct vertex
+{
+	vertex *parent;
+	string name;
+	int grade;
 	double gpa;
 	int testScore; // SAT/ACT score
-    std::vector<adjVertex> adj;
+	int rank;
+	std::vector<adjVertex> adj;
 };
 
 // store each student in a BST based on their name
@@ -59,9 +62,15 @@ struct StudentNode{
 class Student
 {
 public:
+	void addFriend(string v1, string v2, int weight);
+	void addVertex(string name);
+	void displayStudents();
+	void topStudent(); // returns the number 1 ranked student
+	void displayStudentInfo(vertex i);
+	void modifyStudent(string name);
 
-	
 private:
+	vector<vertex> vertices;
 };
 
 #endif
