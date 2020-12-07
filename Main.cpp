@@ -1,87 +1,123 @@
-#include <iostream>
-#include <sstream>
-#include <fstream>
 #include <string>
-#include <vector>
-#include "College.h"
-#include "Student.h"
+#include <fstream>
+#include <sstream>
+#include <cstdlib>
+#include <iostream>
+#include <chrono>
+typedef std::chrono::high_resolution_clock Clock;
+#include "BST.h"
+#include "Graph.h"
+
 using namespace std;
 
-int main(int argc, char *argv[])
+void die(string message)
 {
-	ifstream file;
-	file.open(argv[1]);
-	if(!file){
-		cout << "The file was not able to be opened. Check the file name, and make sure the file is in the same directory as Main.cpp" << endl;
-		return 0;
-	}
-	// build college linked list
-	College collegelist;
-	string lineInCollegeList;
-	string wordInCollegeList;
-	while(getline(file, lineInCollegeList, ',')){
-		stringstream ss(lineInCollegeList);
-		getline(ss,wordInCollegeList);
-	}
-
-	// build student BST
-
-	// menu
-	string menu = "======Main Menu======\n"
-				   "1. \n"
-				   "2. \n"
-				   "3. \n"
-				   "4. \n"
-				   "5. \n";
-
-	if (argc < 2)
+	cout << message << endl;
+	exit(0);
+}
+string removeSpecialCharacters(string s)
+{
+	for (int i = 0; i < s.size(); i++)
 	{
-		cout << "Make sure to add a filename when you run the program!" << endl;
+
+		// Finding the character whose
+		// ASCII value fall under this
+		// range
+		if ((s[i] < 'A' || s[i] > 'Z') &&
+			(s[i] < 'a' || s[i] > 'z'))
+		{
+			// erase function to erase
+			// the character
+			s.erase(i, 1);
+			i--;
+		}
+	}
+	return s;
+}
+
+int PopulateBST(BST *bst, string filename)
+{
+	ifstream file(filename);
+
+	// non-existant or corrupted file
+	if (file.fail())
+	{
+		die("Check if file exists!");
 	}
 
-	int choice = 0;
-	bool done = false;
-
-	std::string filename(argv[1]);
-	do
+	string title, word, line;
+	int count;
+	while (std::getline(file, line, ' '))
 	{
-		cout << menu;
-		cin >> choice;
+		line = removeSpecialCharacters(line);
 
-		// flush the newlines and other characters
-		cin.clear();
-		cin.ignore();
+		count = bst->addWordNode(line);
+	}
+	return count;
+}
 
-		switch (choice)
-		{
-		case 1:
-		{
-			break;
-		}
-		case 2:
-		{
-			break;
-		}
-		case 3:
-		{
-			break;
-		}
-		case 4:
-		{
-			break;
-		}
-		case 6:
-		default:
-		{
-			done = true;
-			break;
-		}
-		}
+int main(int argc, const char *argv[])
+{
 
-	} while (!done);
+	BST bst;
+	Graph g1;
+	string filename(argv[1]);
+	int count = 0;
+	count = PopulateBST(&bst, filename);
+	g1.buildVerticesFromGraphHelper(&bst);
+	g1.buildEdgesFromGraphHelper(&bst);
+	g1.displayEdges();
 
-	cout << "Goodbye!" << endl;
-	return 0;
+	// Project Test Cases
 
+	// Depth First Search Recursive
+	string name;
+	cin >> name;
+	auto t1 = Clock::now();
+	g1.DFS(name);
+	auto t2 = Clock::now();
+	std::cout << "Delta t2-t1: "
+			  << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count()
+			  << " nanoseconds" << std::endl;
+	//https://stackoverflow.com/questions/3220477/how-to-use-clock-in-c
+	//
+
+	// Depth First Search Iterative
+	string name2;
+	cin >> name2;
+	auto t3 = Clock::now();
+	g1.DFSIterative(name);
+	auto t4 = Clock::now();
+	std::cout << "Delta t4-t3: "
+			  << std::chrono::duration_cast<std::chrono::nanoseconds>(t4 - t3).count()
+			  << " nanoseconds" << std::endl;
+
+	// Dijkstras
+	string v1;
+	cin >> v1;
+	auto t5 = Clock::now();
+	g1.dijkstras(v1);
+	auto t6 = Clock::now();
+	std::cout << "Delta t6-t5: "
+			  << std::chrono::duration_cast<std::chrono::nanoseconds>(t6 - t5).count()
+			  << " nanoseconds" << std::endl;
+	
+	// Breadth First Search
+	string vStart;
+	string vEnd;
+	cin >> vStart;
+	cin >> vEnd;
+	auto t7 = Clock::now();
+	g1.BFS(vStart, vEnd);
+	auto t8 = Clock::now();
+	std::cout << "Delta t8-t7: "
+			  << std::chrono::duration_cast<std::chrono::nanoseconds>(t8 - t7).count()
+			  << " nanoseconds" << std::endl;
+
+	// Prim's
+
+	// Topological Sort
+
+	
 	return 0;
 }
