@@ -33,17 +33,14 @@ class Graph
 		void buildVerticesFromGraphHelper(BST *node);
 		void buildEdgesFromGraphHelper(BST *node);
 		void displayG();
-		// Project functions start
-		void DFS(string name); // done
-		void DFSHelper(vertex *v); // done
-		void DFSIterative(string name); // done
-		vertex* minimumDistanceNotVisited(); // done
-		bool visited(); // done
-		void dijkstras(string v1); // done
+		void DFS(string name); 
+		void DFSHelper(vertex *v);
+		void DFSIterative(string name);
+		vertex* minimumDistanceNotVisited(); 
+		bool visited(); 
+		void dijkstras(string v1); 
 		void BFSTraversal(string v);
         vertex* BFS(std::string v1, std::string v2);
-		// Project functions end
-
     protected:
     private:
         //vector<edge> edges;

@@ -93,7 +93,7 @@ void Graph::DFSHelper(vertex *v){ // done
 	v->visited = true;
 	for(int i = 0; i < v->adj.size(); i++){
 		if(!v->adj[i].v->visited){
-			cout << v->adj[i].v->visited << endl;
+			// cout << v->adj[i].v->visited << endl; 
 			DFSHelper(v->adj[i].v);
 		}
 	}
@@ -114,6 +114,7 @@ vertex* Graph::BFS(string startVal, string endVal){
     queue<vertex*> q;
     q.push(v);
     while(!q.empty()){
+		// cout << "Test" << endl;
         vertex *n = q.front(); //front returns a value
         q.pop(); //pop removes from queue
         for(int x = 0; x < n->adj.size(); x++){
@@ -206,10 +207,10 @@ void Graph::BFSTraversal(string v){ // simply works layer by layer - done
 		q.pop();
 		for(int i = 0; i < dequeued->adj.size(); i++){
 			if(!dequeued->adj[i].v->visited){
+				cout << "Test" << endl;
 				dequeued->adj[i].v->visited = true;
 			}
 		}
-		
 	}
 }
 

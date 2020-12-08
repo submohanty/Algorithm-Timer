@@ -1,6 +1,6 @@
 #include "BST.h"
 #include "Graph.h"
-
+#include <string>
 #include <iostream>
 
 using namespace std;
@@ -92,6 +92,26 @@ void BST::printPreOrderBST(BSTNode *node) {
     printPreOrderBST(node->rightChild);
 }
 
+void BST::printPostOrderBST(){
+	if(!root){
+		return;
+	}
+	printPostOrderBST(root);
+}
+
+void BST::printPostOrderBST(BSTNode *node){
+	if(!node){
+		return;
+	}
+	if(node->leftChild != nullptr){
+		printPostOrderBST(node->leftChild);
+	}
+	if(node->rightChild != nullptr){
+		printPostOrderBST(node->rightChild);
+	}
+	cout << node->word << endl;
+}
+
 BSTNode* BST::searchBST(string toFind, int &opCounter) {
     BSTNode *finder = root;
     while(finder != nullptr) {
@@ -108,4 +128,34 @@ BSTNode* BST::searchBST(string toFind, int &opCounter) {
     }
 
     return finder;
+}
+
+string BST::maxBST(BSTNode *node){
+	while(node->rightChild != nullptr){
+		node = node->rightChild;
+	}
+	cout << node->word << endl;
+	return node->word;
+}
+
+string BST::minBST(BSTNode *node){
+	while(node->leftChild != nullptr){
+		node = node->leftChild;
+	}
+	cout << node->word << endl;
+	return node->word;
+}
+
+void BST::maxBST(){
+	if(!root){
+		return; 
+	}
+	maxBST(root);
+}
+
+void BST::minBST(){
+	if(!root){
+		return;
+	}
+	minBST(root);
 }
