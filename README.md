@@ -14,5 +14,6 @@
 **Open Issues/bugs:** 
  - The algorithm timer will sometimes return 0 nanoseconds if you don't follow the instructions and only use different names when using the different algorithms. 
  - Depth First Search iterative function returns 0 nanoseconds.
+ - Sometimes returns 0 nanosecond runtime, yet to pinpoint why exactly for some of the functions
 
 
