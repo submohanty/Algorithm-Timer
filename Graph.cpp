@@ -17,7 +17,6 @@ Graph::Graph()
 
 Graph::~Graph()
 {
-	//dtor
 }
 
 // Function that adds an edge to a vertex (used in the driver file when building the graph)
