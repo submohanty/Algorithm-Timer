@@ -36,7 +36,6 @@ public:
 	void printPostOrderBST(BSTNode *node);
 	string maxBST(BSTNode *node);
 	string minBST(BSTNode *node);
-
 	int addWordNode(std::string word);
 	BSTNode *getRoot();
 
