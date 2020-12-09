@@ -202,7 +202,7 @@ bool Graph::visited()
 // Function to get the minimum distance node - used in the dijkstra's algorithm
 vertex *Graph::minimumDistanceNotVisited()
 { // done
-	int lowestInt = INT_MAX;
+	int lowestInt = INT32_MAX;
 	vertex *iterator;
 	for (int i = 0; i < vertices.size(); i++)
 	{
@@ -238,7 +238,7 @@ void Graph::dijkstras(string v1)
 	for (int j = 0; j < vertices.size(); j++)
 	{
 		cout << vertices[j].name << " is " << vertices[j].distance << " away." << endl;
-		vertices[j].distance = INT_MAX;
+		vertices[j].distance = INT32_MAX;
 		vertices[j].visited = false;
 	}
 }
