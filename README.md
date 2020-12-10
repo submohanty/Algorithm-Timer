@@ -12,7 +12,6 @@
 **Contributors:** Rhonda Hoenigman (extending Exam 3 code), Seok Song and Ryan Dalton for getting pointers from past recitations.
 
 **Open Issues/bugs:** 
- - The algorithm timer will sometimes return 0 nanoseconds if you don't follow the instructions and only use different names when using the different algorithms. 
- - Sometimes returns 0 nanosecond runtime, yet to pinpoint why exactly for some of the functions
+ - Fixed Issues
 
 
