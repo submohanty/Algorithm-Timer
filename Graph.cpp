@@ -160,7 +160,7 @@ vertex *Graph::BFS(string startVal, string endVal)
 	return nullptr;
 }
 
-// Function to do the Depth First Search iteratively, takes in a string name to find and it goes through and searches for it iteratively (this is the one that has the most trouble)
+// Function to do the Depth First Search iteratively, takes in a string name to find and it goes through and searches for it iteratively - fixed
 void Graph::DFSIterative(string name)
 { // done
 	vertex *searchV = search(name);
@@ -171,11 +171,13 @@ void Graph::DFSIterative(string name)
 	while (!myStack.empty())
 	{
 		vertex *myVertex = myStack.top(); // this way we can pop this (setting it equal doesn't work)
+		cout << myVertex->name << endl;
 		myStack.pop();
-		if (myVertex->visited = false)
-		{
-			myVertex->visited = true;
-		}
+		// if (myVertex->visited = false)
+		// {
+		// 	myVertex->visited = true;
+		// 	cout << myVertex->name << " was set to visited" << endl;
+		// }
 		for (adjVertex vIterator : myVertex->adj)
 		{
 			if (!vIterator.v->visited)
