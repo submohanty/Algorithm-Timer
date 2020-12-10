@@ -135,8 +135,8 @@ vertex *Graph::BFS(string startVal, string endVal)
 	q.push(v);
 	while (!q.empty())
 	{
-		// cout << "Test" << endl;
 		vertex *n = q.front(); //front returns a value
+		cout << n->name << endl;
 		q.pop();			   //pop removes from queue
 		for (int x = 0; x < n->adj.size(); x++)
 		{
