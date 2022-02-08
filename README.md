@@ -3,7 +3,7 @@
 
  **How To Run:** Click the green 'Download' in the top right hand corner, then 'Download Zip'. Right click the folder and extract all. Open this folder with VSCode (to examine code and make changes/comments/etc.) (or if you want to just run the code navigate to the folder with your Terminal (Command Prompt on Windows, Terminal on macOS, Terminal on Linux), and then in your terminal, type './a test.txt'. After this is done, the instructions for what you need to enter will be displayed.
  
- **Dependencies:** No special library is required, only the Mingw C++ compiler. For a detailed explanation of how to get C++ on your computer (along with Visual Studio Code if you don't have that already), [click here](https://drive.google.com/file/d/1_B8KkqOVej9JzUu-QxxDnfZQ5iPWH1uK/view?usp=sharing).
+ **Dependencies:** No special library is required, only the Mingw C++ compiler.
 
 **System Requirements:** The Mingw C++ compiler, and a terminal. Works across macOS, Windows, and Linux.
 
